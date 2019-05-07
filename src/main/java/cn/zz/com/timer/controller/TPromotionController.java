@@ -2,9 +2,9 @@ package cn.zz.com.timer.controller;
 
 import cn.zz.com.timer.domain.TPromotion;
 import cn.zz.com.timer.service.ITPromotionService;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
  * @Date: 2019/5/7 09:56
  * @Description:
  */
-@RestController
+@Controller
 public class TPromotionController {
 
     @Resource
