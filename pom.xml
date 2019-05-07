@@ -23,7 +23,18 @@
 
 	<dependencies>
 
-		
+		<!-- 引入freemarker模板依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-freemarker</artifactId>
+		</dependency>
+
+		<!-- 引入thymeleaf模板依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
 		<!--上传图片 -->
 		<dependency>
 			<groupId>commons-io</groupId>

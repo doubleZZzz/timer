@@ -9,15 +9,10 @@
     <script type="text/javascript" src="/js/plugins-override.js"></script>
     <script type="text/javascript" src="/js/My97DatePicker/WdatePicker.js"></script>
     <script type="text/javascript">
+        /*翻页*/
        /* $(function () {
             $('#pagination').twbsPagination({
-                totalPages: ${result.totalPage},
-                visiblePages: 7,
-                startPage:${qo.currentPage},
-                onPageClick: function (event, page) {
-                    $("#currentPage").val(page);
-                    $("#searchForm").submit();
-                }
+
             });
         });*/
     </script>
@@ -35,7 +30,6 @@
         <!--导航菜单-->
         <div class="col-sm-3">
         <#assign currentNav="listProm" />
-					<#include "common/leftmenu-tpl.ftl" />
         </div>
         <!-- 功能页面 -->
         <div class="col-sm-9">
