@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.zz.com.timer.mapper.TPromotionMapper">
+    <resultMap id="BaseResultMap" type="cn.zz.com.timer.domain.TPromotion">
+        <id column="CREATOR_ORG_ID" property="CREATOR_ORG_ID"/>
+        <id column="CREATOR_ORG_NAME" property="CREATOR_ORG_NAME"/>
+        <result column="START_TIME" property="START_TIME"/>
+        <result column="END_TIME" property="END_TIME"/>
+        <result column="REGISTER_START_TIME" property="REGISTER_START_TIME"/>
+        <result column="REGISTER_END_TIME" property="REGISTER_END_TIME"/>
+        <result column="REGISTER_STATUS" property="REGISTER_STATUS"/>
+        <result column="UP_PROM_ID" property="UP_PROM_ID"/>
+        <result column="STATUS" property="STATUS"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from `t_promotion`
+    where CREATOR_ORG_ID = #{CREATOR_ORG_ID}
+      and CREATOR_ORG_NAME = #{CREATOR_ORG_NAME}
+  </delete>
+    <insert id="insert" parameterType="cn.zz.com.timer.domain.TPromotion">
+    insert into `t_promotion` (CREATOR_ORG_ID, CREATOR_ORG_NAME,UP_PROM_ID, START_TIME, END_TIME, REGISTER_START_TIME,
+      REGISTER_END_TIME, REGISTER_STATUS, STATUS)
+    values (#{CREATOR_ORG_ID}, #{CREATOR_ORG_NAME},#{UP_PROM_ID}, #{START_TIME}, #{END_TIME}, #{REGISTER_START_TIME},
+      #{REGISTER_END_TIME}, #{REGISTER_STATUS}, #{STATUS})
+  </insert>
+    <update id="updateByPrimaryKey" parameterType="cn.zz.com.timer.domain.TPromotion">
+    update `t_promotion`
+    set START_TIME = #{START_TIME},
+      UP_PROM_ID=#{UP_PROM_ID},
+      END_TIME = #{END_TIME},
+      REGISTER_START_TIME = #{REGISTER_START_TIME},
+      REGISTER_END_TIME = #{REGISTER_END_TIME},
+      REGISTER_STATUS = #{REGISTER_STATUS},
+      STATUS = #{STATUS}
+    where CREATOR_ORG_ID = #{CREATOR_ORG_ID}
+      and CREATOR_ORG_NAME = #{CREATOR_ORG_NAME}
+  </update>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map">
+    select CREATOR_ORG_ID, CREATOR_ORG_NAME,UP_PROM_ID, START_TIME, END_TIME, REGISTER_START_TIME,
+    REGISTER_END_TIME, REGISTER_STATUS, STATUS
+    from `t_promotion`
+    where CREATOR_ORG_ID = #{CREATOR_ORG_ID}
+      and CREATOR_ORG_NAME = #{CREATOR_ORG_NAME}
+  </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+    select CREATOR_ORG_ID, CREATOR_ORG_NAME,UP_PROM_ID, START_TIME, END_TIME, REGISTER_START_TIME,
+    REGISTER_END_TIME, REGISTER_STATUS, STATUS
+    from `t_promotion`
+  </select>
+
+    <!-- 展示上级活动ID为null的所有活动-->
+    <select id="selectByUpId" resultMap="BaseResultMap">
+        select CREATOR_ORG_ID, CREATOR_ORG_NAME,UP_PROM_ID, START_TIME, END_TIME, REGISTER_START_TIME,
+        REGISTER_END_TIME, REGISTER_STATUS, STATUS
+        from `t_promotion`  WHERE UP_PROM_ID IS NULL
+    </select>
+</mapper>

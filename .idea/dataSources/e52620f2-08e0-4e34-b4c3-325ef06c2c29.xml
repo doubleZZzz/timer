@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="ocsdb@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="ocsdb">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="gbf-pay"/>
+    <schema id="4" parent="1" name="gbf-sys"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="market"/>
+    <schema id="7" parent="1" name="mysql"/>
+    <schema id="8" parent="1" name="ocsdbface"/>
+    <schema id="9" parent="1" name="p2p"/>
+    <schema id="10" parent="1" name="performance_schema"/>
+    <schema id="11" parent="1" name="pinwheel"/>
+    <schema id="12" parent="1" name="practise"/>
+    <schema id="13" parent="1" name="shop-goods"/>
+    <schema id="14" parent="1" name="shop-member"/>
+    <schema id="15" parent="1" name="shop-order"/>
+    <schema id="16" parent="1" name="test"/>
+    <schema id="17" parent="1" name="zx_equity"/>
+    <table id="18" parent="2" name="t_promotion"/>
+    <column id="19" parent="18" name="CREATOR_ORG_ID">
+      <Position>1</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="18" name="CREATOR_ORG_NAME">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="18" name="UP_PROM_ID">
+      <Position>3</Position>
+      <Comment>上级活动ID</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="22" parent="18" name="START_TIME">
+      <Position>4</Position>
+      <Comment>活动开始时间</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="23" parent="18" name="END_TIME">
+      <Position>5</Position>
+      <Comment>活动结束时间</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="24" parent="18" name="REGISTER_START_TIME">
+      <Position>6</Position>
+      <Comment>报名开始时间</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="25" parent="18" name="REGISTER_END_TIME">
+      <Position>7</Position>
+      <Comment>活动结束时间</Comment>
+      <DataType>varchar(32)|0</DataType>
+    </column>
+    <column id="26" parent="18" name="REGISTER_STATUS">
+      <Position>8</Position>
+      <Comment>报名状态&#xd;
+1未开始&#xd;
+2报名中&#xd;
+3已结束&#xd;
+4已强制关闭</Comment>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <column id="27" parent="18" name="STATUS">
+      <Position>9</Position>
+      <Comment>活动状态&#xd;
+1未开始&#xd;
+2进行中&#xd;
+3已结束&#xd;
+4已强制关闭</Comment>
+      <DataType>tinyint(1)|0</DataType>
+    </column>
+    <key id="28" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CREATOR_ORG_ID
+CREATOR_ORG_NAME</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
