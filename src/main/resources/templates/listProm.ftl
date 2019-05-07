@@ -16,7 +16,7 @@
                 活动列表
             </div>
 
-            <table class="table table-hover">
+            <table class="table table-bordered ">
                 <thead>
                 <tr>
                     <th>活动编号</th>
@@ -52,9 +52,6 @@
                 </#list>
                 </tbody>
             </table>
-            <div style="text-align: center;">
-                <ul id="pagination" class="pagination"></ul>
-            </div>
         </div>
     </div>
 </div>
